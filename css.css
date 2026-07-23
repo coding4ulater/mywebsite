@@ -1,94 +1,114 @@
-*{
-    margin: 0;
-    padding: 0;
+/* Fix for top being cut off — add safe-area handling and adjust background/top padding */
 
-
+/* Reset + box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.main{
-    width: 100%;
-   background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 109vh;
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #fff;
 }
 
-.navbar{
-    width: 1200px;
-    height: 70px;
-    margin: auto;
+/* Honor the notch / status bar on iOS:
+   constant() for older iOS, env() for modern */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-menu{
-    width: 400px;
-    float: left;
-    height: 70px;
+/* Provide a small body inset so nothing sits behind the status bar */
+body {
+  padding-top: calc(var(--safe-top));
 }
 
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
+/* Page background with subtle dark overlay */
+.main {
+  min-height: 100vh;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.35)),
+    url('1.jpg') top center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 20px;
-    font-weight: bold;
+/* Top navigation - add safe-area padding */
+.navbar {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: calc(0.9rem + var(--safe-top)) 1rem 0.9rem; /* push down by safe inset */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-family: sans-serif;
-    font-weight: 20px;
-    transition: 0.4s ease-in-out;
+/* Nav / logo / links */
+.logo {
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.4px;
 }
 
-ul li a:hover{
-    color: hsl(307, 87%, 53%);
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
 }
 
-
-.content{
-    width: 1100px;
-    height: auto;
-    margin: left;
-    color: #fff;
-    position: left;
+.site-nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
 }
 
-.content .paragraph{
-    padding-left: 30px;
-    padding-top: 160px; 
-    font-family: sans-serif;
-    letter-spacing: 1px;    
-    line-height: 1.0;
+.site-nav a:hover,
+.site-nav a:focus {
+  background: rgba(255,255,255,0.06);
+  color: hsl(307, 87%, 53%);
+  transform: translateY(-1px);
 }
 
-content .h1{
-    padding-left: 20px;
-    font-family: sans-serif;
-    font-size: 50px;
-    padding-top: 20px;
-    cursor: pointer;
-    background: #4394a0;
+/* Main content container */
+.container.content {
+  width: 100%;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1.1rem;
+  background: rgba(0,0,0,0.32);
+  border-radius: 8px;
 }
 
-
-.content {
-    overflow: auto;    
+h1 {
+  font-size: clamp(1.25rem, 4vw, 1.9rem);
+  margin-bottom: 0.6rem;
+  line-height: 1.15;
 }
 
-.logo{
-    width: 100px;
-    float: left;
-    height: 70px;
-    margin-top: 10px;
-    color: #fff;
+p {
+  font-size: clamp(0.98rem, 2.4vw, 1.05rem);
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+  color: #f7f7f7;
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .navbar { padding: calc(0.6rem + var(--safe-top)) 0.6rem 0.6rem; }
+  .container.content { margin: 0.9rem; padding: 0.9rem; }
 }
