@@ -33,7 +33,7 @@ body {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: calc(0.9rem + var(--safe-top)) 1rem 0.9rem; /* push down by safe inset */
+  padding: calc(0.9rem + var(--safe-top)) 1rem 0.9rem; 
   display: flex;
   align-items: center;
   justify-content: space-between;
