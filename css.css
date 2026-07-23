@@ -80,17 +80,6 @@ content .h1{
     background: #4394a0;
 }
 
-.small-img {
-    width: 300px;      
-    max-width: 100%;
-    height: auto;
-    float: right;  
-    margin: 0 0 16px 24px;
-    border-radius: 6px;
-    object-fit: cover;
-}
-
-
 
 .content {
     overflow: auto;    
