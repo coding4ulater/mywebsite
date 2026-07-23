@@ -1,267 +1,93 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+    margin: 0;
+    padding: 0;
+
+
 }
 
-html, body {
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
+.main{
+    width: 100%;
+   background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 109vh;
 }
 
-:root {
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --primary: #ff1493;
-  --secondary: #00bfff;
-  --dark-bg: rgba(10, 10, 20, 0.7);
+.navbar{
+    width: 1200px;
+    height: 70px;
+    margin: auto;
 }
 
-body {
-  padding-top: calc(var(--safe-top));
+menu{
+    width: 400px;
+    float: left;
+    height: 70px;
 }
 
-.main {
-  min-height: 100vh;
-  background:
-    linear-gradient(135deg, rgba(255, 20, 147, 0.1) 0%, rgba(0, 191, 255, 0.1) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
-    url('1.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.navbar {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: calc(1.2rem + var(--safe-top)) 2rem 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid rgba(255, 20, 147, 0.2);
-}
-
-.logo {
-  font-size: 1.8rem;
-  color: var(--primary);
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0;
-  margin: 0;
-}
-
-.site-nav a {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  position: relative;
-  border-bottom: 2px solid transparent;
-}
-
-.site-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width 0.3s ease;
-}
-
-.site-nav a:hover::after {
-  width: 100%;
-}
-
-.site-nav a:hover,
-.site-nav a:focus {
-  background: rgba(255, 20, 147, 0.1);
-  color: var(--primary);
-  transform: translateY(-2px);
-}
-
-.container.content {
-  width: 100%;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-}
-
-.intro {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.intro h2 {
-  font-size: clamp(2rem, 6vw, 2.8rem);
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.subtitle {
-  font-size: 1.3rem;
-  color: var(--secondary);
-  font-weight: 600;
-  margin-bottom: 1rem !important;
-}
-
-.description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #e0e0e0;
-  max-width: 700px;
-  margin: 1.5rem auto !important;
-}
-
-.poetry {
-  background: var(--dark-bg);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 20, 147, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  padding: 2.5rem;
-}
-
-.poetry h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary);
-}
-
-.poem {
-  margin: 0;
-  padding: 1.5rem;
-  background: rgba(255, 20, 147, 0.05);
-  border-left: 4px solid var(--primary);
-  border-radius: 8px;
-  font-style: italic;
-  line-height: 1.9;
-}
-
-.poem p {
-  color: #f0f0f0;
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
-}
-
-.poem p:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: calc(1rem + var(--safe-top)) 1rem 1rem;
-  }
-
-  .logo {
-    font-size: 1.4rem;
-  }
-
-  .site-nav ul {
+ul{
+    float: left;
+    display: flex;
     justify-content: center;
-    gap: 0.8rem;
-  }
-
-  .site-nav a {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  .container.content {
-    margin: 1.5rem auto;
-    padding: 0 1rem;
-  }
-
-  .poetry {
-    padding: 1.5rem;
-  }
-
-  .intro h2 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-  }
-
-  .description {
-    font-size: 1rem;
-  }
+    align-items: center;
+    height: 70px;
 }
 
-@media (max-width: 420px) {
-  .navbar {
-    padding: calc(0.8rem + var(--safe-top)) 0.8rem 0.8rem;
-  }
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-  .logo {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-  }
 
-  .site-nav ul {
-    gap: 0.4rem;
-  }
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 20px;
+    transition: 0.4s ease-in-out;
+}
 
-  .site-nav a {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
-  }
+ul li a:hover{
+    color: hsl(307, 87%, 53%);
+}
 
-  .container.content {
-    margin: 1rem auto;
-    padding: 0 0.8rem;
-  }
 
-  .poetry {
-    padding: 1rem;
-  }
+.content{
+    width: 1100px;
+    height: auto;
+    margin: left;
+    color: #fff;
+    position: left;
+}
 
-  .intro h2 {
-    font-size: 1.5rem;
-  }
+.content .paragraph{
+    padding-left: 30px;
+    padding-top: 160px; 
+    font-family: sans-serif;
+    letter-spacing: 1px;    
+    line-height: 1.0;
+}
 
-  .subtitle {
-    font-size: 0.95rem;
-  }
+content .h1{
+    padding-left: 20px;
+    font-family: sans-serif;
+    font-size: 50px;
+    padding-top: 20px;
+    cursor: pointer;
+    background: #4394a0;
+}
 
-  .description {
-    font-size: 0.9rem;
-  }
+.content {
+    overflow: auto;    
+}
 
-  .poetry h3 {
-    font-size: 1.3rem;
-  }
-
-  .poem {
-    padding: 1rem;
-  }
-
-  .poem p {
-    font-size: 0.95rem;
-  }
+.logo{
+    width: 100px;
+    float: left;
+    height: 70px;
+    margin-top: 10px;
+    color: #fff;
 }
