@@ -1,7 +1,4 @@
-/* Fix for top being cut off — add safe-area handling and adjust background/top padding */
-
-/* Reset + box-sizing */
-* {
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -13,20 +10,16 @@ html, body {
   color: #fff;
 }
 
-/* Honor the notch / status bar on iOS:
-   constant() for older iOS, env() for modern */
 :root {
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Provide a small body inset so nothing sits behind the status bar */
 body {
   padding-top: calc(var(--safe-top));
 }
 
-/* Page background with subtle dark overlay */
-.main {
+
   min-height: 100vh;
   background:
     linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.35)),
@@ -36,8 +29,7 @@ body {
   align-items: stretch;
 }
 
-/* Top navigation - add safe-area padding */
-.navbar {
+
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -47,7 +39,6 @@ body {
   justify-content: space-between;
 }
 
-/* Nav / logo / links */
 .logo {
   font-size: 1.05rem;
   color: #fff;
@@ -84,8 +75,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* Main content container */
-.container.content {
+
   width: 100%;
   max-width: 900px;
   margin: 1.5rem auto;
@@ -107,7 +97,6 @@ p {
   color: #f7f7f7;
 }
 
-/* Responsive tweaks */
 @media (max-width: 420px) {
   .navbar { padding: calc(0.6rem + var(--safe-top)) 0.6rem 0.6rem; }
   .container.content { margin: 0.9rem; padding: 0.9rem; }
