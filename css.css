@@ -7,7 +7,7 @@
 
 .main{
     width: 100%;
-   background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
+    background: #FFB6D9;
     background-size: cover;
     background-position: center;
     height: 109vh;
@@ -44,14 +44,14 @@ ul li{
 
 ul li a{
     text-decoration: none;
-    color: #fff;
+    color: #333;
     font-family: sans-serif;
     font-weight: 20px;
     transition: 0.4s ease-in-out;
 }
 
 ul li a:hover{
-    color: hsl(307, 87%, 53%);
+    color: #C9176E;
 }
 
 
@@ -59,7 +59,7 @@ ul li a:hover{
     width: 1100px;
     height: auto;
     margin: left;
-    color: #fff;
+    color: #333;
     position: left;
 }
 
@@ -77,7 +77,7 @@ content .h1{
     font-size: 50px;
     padding-top: 20px;
     cursor: pointer;
-    background: #4394a0;
+    background: #FF69B4;
 }
 
 .content {
@@ -89,5 +89,5 @@ content .h1{
     float: left;
     height: 70px;
     margin-top: 10px;
-    color: #fff;
+    color: #333;
 }
